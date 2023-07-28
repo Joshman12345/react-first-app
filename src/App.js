@@ -14,6 +14,7 @@ export const App = () => {
 // 4days deadline----------------------------
 const FOUR_DAYS_IN_MILLISECONDS = 4 * 24 * 60 * 60 * 1000;
 const CURRENT_TIME_IN_MILLISECONDS = new Date().getTime();
+
 // const startCountdownFromHere = FOUR_DAYS_IN_MILLISECONDS + CURRENT_TIME_IN_MILLISECONDS
 const startCountdownFromHere = 1690898906822;
 return(

@@ -6,11 +6,19 @@ const Countdowntimer = ({deadline}) => {
 
 const currentTime = new Date().getTime()
 const [countDown, setCountDown] = useState(deadlineDate - new Date().getTime())
+const [Day, setDay] = useState(0)
+const [Hour, setHour] = useState(0)
+const [Minute, setMinute] = useState(0)
+const [seconds, setSeconds] = useState(0)
 
 useEffect(() => {
   const timer = setInterval(() => {
       if (countDown > 0) {
           setCountDown(deadlineDate - new Date().getTime())
+          setDay(Math.floor(countDown / (1000 * 60 * 60 * 24)))
+          setHour(Math.floor(countDown%(1000 * 60 * 60 * 24) / (1000 * 60 * 60)))
+          setMinute(Math.floor(countDown%(1000 * 60 * 60) / (1000 * 60)))
+          setSeconds(Math.floor(countDown%(1000 * 60) / 1000))
       }
     }, 1000) 
     // console.log(countDown / 1000)
@@ -26,16 +34,31 @@ useEffect(() => {
         <div className="row">
           {console.log(countDown % (1000 * 60))}
           <DisplayTimeAndDate
-          title="day"  val={Math.floor(countDown / (1000 * 60 * 60 * 24))}
+          // title="day"  val={Math.floor(countDown / (1000 * 60 * 60 * 24))}
+          // />
+
+          title="Day"
           />
+
           <DisplayTimeAndDate 
-         title="hour"  val={Math.floor(countDown%(1000 * 60 * 60 * 24) / (1000 * 60 * 60))}
+        //  title="hour"  val={Math.floor(countDown%(1000 * 60 * 60 * 24) / (1000 * 60 * 60))}
+        //   />
+
+         title="Hour" 
           />
+
+
           <DisplayTimeAndDate
-             title="minute" val={Math.floor(countDown%(1000 * 60 * 60) / (1000 * 60))}
+          //    title="minute" val={Math.floor(countDown%(1000 * 60 * 60) / (1000 * 60))}
+          // />
+              title="Minute"
           />
+
+
           <DisplayTimeAndDate
-          title="seconds" val={Math.floor(countDown%(1000 * 60) / 1000)}
+          // title="seconds" val={Math.floor(countDown%(1000 * 60) / 1000)}
+          // />
+          title="Seconds"
           />
         </div>
       </div>
