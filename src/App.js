@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import SkillLevelDisplay from './components/SkillLevelDisplay';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Card, {SampleText}from './components/Card';
 import Countdowntimer from './components/UI/Countdowntimer';
 export const App = () => {
