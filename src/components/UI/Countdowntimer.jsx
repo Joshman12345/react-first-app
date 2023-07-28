@@ -37,28 +37,28 @@ useEffect(() => {
           // title="day"  val={Math.floor(countDown / (1000 * 60 * 60 * 24))}
           // />
 
-          title="Day"
+          title="Day" val={Day}
           />
 
           <DisplayTimeAndDate 
         //  title="hour"  val={Math.floor(countDown%(1000 * 60 * 60 * 24) / (1000 * 60 * 60))}
         //   />
 
-         title="Hour" 
+         title="Hour"  val={Hour}
           />
 
 
           <DisplayTimeAndDate
           //    title="minute" val={Math.floor(countDown%(1000 * 60 * 60) / (1000 * 60))}
           // />
-              title="Minute"
+              title="Minute" val={Minute}
           />
 
 
           <DisplayTimeAndDate
           // title="seconds" val={Math.floor(countDown%(1000 * 60) / 1000)}
           // />
-          title="Seconds"
+          title="Seconds" val={seconds}
           />
         </div>
       </div>
