@@ -2,22 +2,28 @@
 import { useState } from 'react';
 import SkillLevelDisplay from './components/SkillLevelDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from './components/Card';
-
+import Card, {SampleText}from './components/Card';
+import Countdowntimer from './components/UI/Countdowntimer';
 export const App = () => {
   const [show , setShow] = useState('false')
   const handleToggleShow = () => {
     setShow (!show)
   }
+
+// 4days deadline----------------------------
+const FOUR_DAYS_IN_MILLISECONDS = 4 * 24 * 60 * 60 * 1000;
+const CURRENT_TIME_IN_MILLISECONDS = new Date().getTime();
+// const startCountdownFromHere = FOUR_DAYS_IN_MILLISECONDS + CURRENT_TIME_IN_MILLISECONDS
+const startCountdownFromHere = 1690898906822;
 return(
   <>
   <SkillLevelDisplay />
-
+ 
   <Card title = "Card 1" 
   imageUrl = "image 1"
   color = "green"
   toggleTitle ={handleToggleShow}
-  showText = {show}
+  showText = {show} 
   bgColor="black"/>
 
   <Card title = "Card 2" 
@@ -33,13 +39,11 @@ return(
   toggleTitle ={handleToggleShow}
   showText = {show}
   bgColor="black"/>
+  
+  <Countdowntimer  deadline={startCountdownFromHere}/>
+   
 
-   <div className='mt-3'>
-   <div>day: 5</div>
-   <div>hours: 15</div>
-   <div>minute: 45</div>
-   <div>seconds: 20</div>
-   </div>
+   
    {/* <div className='mt-3'>
    <div>
     Card 1
